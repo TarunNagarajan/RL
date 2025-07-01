@@ -11,7 +11,7 @@ def run_bandit(steps, runs, epsilon):
         best_action = np.argmax(q_true) # q*(a) = E[R_t | A_t = a]
 
         Q = np.zeros(k) # Initial Estimates
-        N = np.zeros(k) # Action Counts / AKA the number of times each action was selected
+        N = np.zeros(k) # Action frequency array
 
         for t in range(steps): # for each time step
             if np.random.rand() < epsilon:
